@@ -1,14 +1,5 @@
 ---
 title: "[Test] 첫 번째 포스트"
-categories:
-  - Test
-tags:
-  - markdown
-  - github.io
-  - blog
-  - test
-toc: true
-toc_sticky: true
 ---
 
 ### 이 글은 kyumin0411.github.io 의 첫 번째 포스팅입니다.
