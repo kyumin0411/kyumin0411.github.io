@@ -34,28 +34,31 @@ container를 생성하는 방법은 두 가지가 있습니다.
 1. `docker create` 후, `docker start` -> container 생성 후, 실행
 2. `docker run` -> container 생성과 동시에 바로 실행
 
-> docker create
+```
+docker create [Options] Image
+```
 
 먼저 첫 번째 방법으로 container를 생성해보도록 하겠습니다.
 
-[docker create 이미지 삽입]
+<img width="1512" alt="스크린샷 2022-04-03 오후 9 00 23" src="https://user-images.githubusercontent.com/85981698/161428014-65adf85d-5e3a-4bcb-b896-43451ed39c27.png">
 
 `docker create` 명령어는 많은 옵션을 추가할 수 있고 마지막에 이미지 이름을 넣어주면 됩니다.
 `--name` 옵션을 이용해 container의 이름을 지정해주었고, `-p` 옵션을 추가해 port forwarding을 적용했습니다.
 80:8080 이라는 것은 VM의 외부 IP 주소에 80번 포트로 들어오면 8080 포트로 연결해준다는 의미입니다.
 
-[docker ps 이미지 삽입]
+<img width="1344" alt="스크린샷 2022-04-03 오후 9 04 49" src="https://user-images.githubusercontent.com/85981698/161428024-0cd70de0-9c99-475f-829a-54de73fe7faf.png">
+
 
 `docker ps` 명령어를 실행하면 현재 실행 중인 container를 조회할 수 있습니다.
 하지만 지금 상태의 container는 container life cycle의 `Up`(running) 상태가 아닌 `Created` 상태이므로
 `docker ps -a` 옵션을 주어 조회해야 찾을 수 있습니다.
 Status가 `Created`에서 `Up`으로 container를 실행시키기 위해서는 start 명령어를 입력하면 됩니다.
 
-[docker start 이미지 삽입]
+<img width="1512" alt="스크린샷 2022-04-03 오후 9 08 28" src="https://user-images.githubusercontent.com/85981698/161428041-ce2253e5-b061-49b7-8fe8-37103b5ddd37.png">
 
 `docker start` 명령어에 container의 Id를 함께 입력하면 해당 container의 상태가 `Up`으로 변경되고 잘 실행됩니다.
 
-[VM 외부 IP 이미지 삽입]
+<img width="1512" alt="스크린샷 2022-04-03 오후 9 13 41" src="https://user-images.githubusercontent.com/85981698/161428051-4cd9e5a1-242e-484c-917b-b6a8086e68a4.png">
 
 container를 만들 때 포트 포워딩을 해두었기 때문에 container가 배포된 것을 확인할 수 있습니다.
 GCP의 VM Instance 페이지로 돌아가서 해당 VM의 외부 IP 주소를 복사한 후, 80번 포트로 연결해주면 해당 페이지에서 tomcat 홈페이지를 확인할 수 있습니다.
