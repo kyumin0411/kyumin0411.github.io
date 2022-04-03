@@ -2,32 +2,17 @@
 title: "[SDS 실습 02] GCP에서 docker 실습 - 1"
 ---
 
-# Docker 실습 초기 세팅
+# Docker 실습 초기 세팅 및 docker hub 실습
 
 GCP(Google Cloud Platform)에서 생성한 VM에 docker를 설치한 후, <br>
 docker의 여러 명령어들을 입력해보며 docker에 대한 이해도를 높이는 실습을 하고자 합니다.
 
 모든 docker 명령어에 대한 정보는 아래 docker 공식 문서에서 참고할 수 있습니다. 실습 때는 핵심적인 명령어만 다루어 보도록 하겠습니다.
-
 <https://docs.docker.com/engine/reference/commandline/docker/>
 
-## 들어가기 앞서..
+## docker image
 
-실습을 주로 포스팅 하기 위해서 서론은 최대한 줄이려고 하지만, 최소한 알고 가야 하는 개념을 조금 정리해보고자 합니다.
-
-### docker container Life-cycle state
-
-docker가 관리하는 container는 일련의 life-cycle state를 가집니다.
-
-<img width="721" alt="스크린샷 2022-04-03 오후 8 06 14" src="https://user-images.githubusercontent.com/85981698/161424834-8b97d147-41a9-4506-91d3-d8fc4b6c586f.png">
-
-- **Created**: 컨테이너가 생성되었지만 시작하지는 않은 상태
-- **Running**: 컨테이너 내부의 모든 프로세스를 스타트하여 running하는 상태
-- **Paused**: 컨테이너 내부의 모든 프로세스가 멈춰있는 상태
-- **Stopped**: 컨테이너 내부의 모든 프로세스가 정지된 상태
-- **Deleted**: 컨테이너가 삭제되어 죽은 상태
-
-### docker image
+실습을 들어가기 앞서, docker image에 대해서 정리해보고자 합니다.
 
 > docker image란?
 
@@ -101,10 +86,6 @@ docker hub 사이트에서도 검색할 수 있지만, `docker search {imageName
 
 <br>
 
-## docker container 생성
+여기까지 docker를 설치해보고 docker hub에서 image를 pull 받는 실습을 진행했습니다.
 
-> 만약 image가 로컬 레지스트리에 pull되어 있지 않은데 create하려고 한다면?
-
-자동 설치된다.
-
-<img width="1512" alt="스크린샷 2022-04-03 오후 8 23 57" src="https://user-images.githubusercontent.com/85981698/161425960-a36f6f95-b626-4a2b-9778-65e2621e449a.png">
+다음 글에서는 container에 대해 다루도록 하겠습니다.
