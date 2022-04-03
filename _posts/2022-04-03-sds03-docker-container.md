@@ -43,14 +43,13 @@ container를 생성하는 방법은 두 가지가 있습니다.
 <img width="1512" alt="스크린샷 2022-04-03 오후 9 00 23" src="https://user-images.githubusercontent.com/85981698/161428014-65adf85d-5e3a-4bcb-b896-43451ed39c27.png">
 
 - `docker create` 명령어는 많은 옵션을 추가할 수 있고 마지막에 이미지 이름을 넣어주면 됩니다. <br>
-- `--name` 옵션을 이용해 container의 이름을 지정해주었고, `-p` 옵션을 추가해 port forwarding을 적용했습니다. <br>- **80:8080** 이라는 것은 VM의 외부 IP 주소에 80번 포트로 들어오면 8080 포트로 연결해준다는 의미입니다.
+- `--name` 옵션을 이용해 container의 이름을 지정해주었고, `-p` 옵션을 추가해 port forwarding을 적용했습니다. <br>- 80:8080 이라는 것은 VM의 외부 IP 주소에 80번 포트(http)로 들어오면 8080 포트로 연결해준다는 의미입니다.
 
 <img width="1344" alt="스크린샷 2022-04-03 오후 9 04 49" src="https://user-images.githubusercontent.com/85981698/161428024-0cd70de0-9c99-475f-829a-54de73fe7faf.png">
 
 - `docker ps` 명령어를 실행하면 현재 실행 중인 container를 조회할 수 있습니다.
 - 지금 상태의 container는 container life cycle의 `Up`(running) 상태가 아닌 `Created` 상태이므로
   `docker ps -a` 옵션을 주어 조회해야 찾을 수 있습니다.
-  <br>- Status가 `Created`에서 `Up`으로 container를 실행시키기 위해서는 **start** 명령어를 입력하면 됩니다.
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 9 08 28" src="https://user-images.githubusercontent.com/85981698/161428041-ce2253e5-b061-49b7-8fe8-37103b5ddd37.png">
 
@@ -66,3 +65,5 @@ container를 생성하는 방법은 두 가지가 있습니다.
 오류 없이, 해당 image를 docker hub에서 찾아 먼저 알아서 자동으로 설치해줍니다.
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 23 57" src="https://user-images.githubusercontent.com/85981698/161425960-a36f6f95-b626-4a2b-9778-65e2621e449a.png">
+
+### docker run
