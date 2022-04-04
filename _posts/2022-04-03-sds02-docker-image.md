@@ -2,15 +2,22 @@
 title: "[SDS 실습 02] GCP에서 docker 실습 - 1"
 ---
 
+<br>
+<br>
+<br>
 # Docker 실습 초기 세팅 및 docker hub 실습
 
+<br>
 GCP(Google Cloud Platform)에서 생성한 VM에 docker를 설치한 후, <br>
 docker의 여러 명령어들을 입력해보며 docker에 대한 이해도를 높이는 실습을 하고자 합니다.
 
 모든 docker 명령어에 대한 정보는 아래 docker 공식 문서에서 참고할 수 있습니다. 실습 때는 핵심적인 명령어만 다루어 보도록 하겠습니다.
 <https://docs.docker.com/engine/reference/commandline/docker/>
 
+<br>
+<br>
 ## docker image
+<br>
 
 실습을 들어가기 앞서, docker image에 대해서 정리해보고자 합니다.
 
@@ -30,7 +37,10 @@ docker를 build할 때 이미지가 생성됩니다. <br>
 docker image들은 docker hub처럼, 원격 저장소에서 관리됩니다. <br>
 정확히는 이미지 layer 단위로 저장되어 관리되며, 여러 사용자들이 로컬 환경으로 pull 받아 사용할 수 있기에 CI/CD 방식에 적합합니다.
 
+<br>
+<br>
 ## VM 접속
+<br>
 
 이제 본격적으로 실습을 시작하겠습니다.
 
@@ -44,8 +54,11 @@ VM Instance들의 표에 '연결'에 SSH 연결이 가능하도록 버튼이 활
 위 명령어를 입력하면 구글 계정의 사용자가 관리자 권한을 가진 관리자 모드로 변경됩니다.
 
 <br>
+<br>
 
 ## docker 설치
+
+<br>
 
 ```
 apt update
@@ -59,31 +72,48 @@ docker가 최신 상태를 유지할 수 있도록 update를 해준 후 docker�
 
 docker가 잘 설치되었는지 확인합니다.
 <br>
+<br>
 
 ## docker image pull
+
+<br>
 
 이제 docker hub에서 image를 pull 받아오는 실습을 해보겠습니다.
 
 먼저, [docker hub](https://hub.docker.com/)에 가입되어 있어야 합니다.
+<br>
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 16 02" src="https://user-images.githubusercontent.com/85981698/161425925-6e595d48-477e-492a-85cb-9b0f8bce3f64.png">
+<br>
+<br>
 
 `docker login` 명령어를 입력하면 docker hub 가입에 사용했던 Username과 Password를 입력하라고 합니다.
 
 docker hub 사이트에서도 검색할 수 있지만, `docker search {imageName}` 명령어를 이용해 이미지 정보를 검색할 수 있습니다.
+<br>
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 19 51" src="https://user-images.githubusercontent.com/85981698/161425937-dc0b3ef4-4e52-4365-ba47-c8c69331fc48.png">
+<br>
+<br>
 
 하나의 예로, `consol/tomcat` 을 검색하면 관련 이미지들이 조회되어 볼 수 있습니다.
+<br>
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 27 11" src="https://user-images.githubusercontent.com/85981698/161425979-5092af66-681c-4260-9ea3-9d2ab509fb81.png">
+<br>
+<br>
 
 `docker pull {imageName}` 명령어를 실행하면 해당 이미지가 docker hub로 부터 pull 받아져와서 로컬 VM에 이미지가 설치됩니다.
 
+<br>
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 29 42" src="https://user-images.githubusercontent.com/85981698/161425990-584f3c8e-8c55-4da6-9f4e-e9117086863c.png">
+<br>
+<br>
 
 `docker images` 명령어를 실행하면 현재 가지고 있는 이미지들의 종류를 조회한 결과를 볼 수 있습니다.
 
+<br>
+<br>
 <br>
 
 여기까지 docker를 설치해보고 docker hub에서 image를 pull 받는 실습을 진행했습니다.
