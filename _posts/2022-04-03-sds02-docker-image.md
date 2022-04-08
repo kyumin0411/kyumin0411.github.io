@@ -12,6 +12,7 @@ GCP(Google Cloud Platform)에서 생성한 VM에 docker를 설치한 후, <br>
 docker의 여러 명령어들을 입력해보며 docker에 대한 이해도를 높이는 실습을 하고자 합니다.
 
 모든 docker 명령어에 대한 정보는 아래 docker 공식 문서에서 참고할 수 있습니다. 실습 때는 핵심적인 명령어만 다루어 보도록 하겠습니다.
+<br>
 <https://docs.docker.com/engine/reference/commandline/docker/>
 
 <br>
@@ -86,19 +87,32 @@ docker가 잘 설치되었는지 확인합니다.
 먼저, [docker hub](https://hub.docker.com/)에 가입되어 있어야 합니다.
 <br>
 
+> docker login
+
+<br>
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 16 02" src="https://user-images.githubusercontent.com/85981698/161425925-6e595d48-477e-492a-85cb-9b0f8bce3f64.png">
-<br>]
+<br>
 
 `docker login` 명령어를 입력하면 docker hub 가입에 사용했던 Username과 Password를 입력하라고 합니다.
+<br>
 
-docker hub 사이트에서도 검색할 수 있지만, `docker search {imageName}` 명령어를 이용해 이미지 정보를 검색할 수 있습니다.
+> docker search
+
 <br>
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 19 51" src="https://user-images.githubusercontent.com/85981698/161425937-dc0b3ef4-4e52-4365-ba47-c8c69331fc48.png">
 <br>
 
+docker hub 사이트에서도 검색할 수 있지만, `docker search {imageName}` 명령어를 이용해 이미지 정보를 검색할 수 있습니다.
+<br>
+
 하나의 예로, `consol/tomcat` 을 검색하면 관련 이미지들이 조회되어 볼 수 있습니다.
 <br>
+<br>
+<br>
+
+> docker pull
+
 <br>
 
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 27 11" src="https://user-images.githubusercontent.com/85981698/161425979-5092af66-681c-4260-9ea3-9d2ab509fb81.png">
@@ -106,8 +120,13 @@ docker hub 사이트에서도 검색할 수 있지만, `docker search {imageName
 
 `docker pull {imageName}` 명령어를 실행하면 해당 이미지가 docker hub로 부터 pull 받아져와서 로컬 VM에 이미지가 설치됩니다.
 <br>
+<br>
+<br>
+
+> docker images
 
 <br>
+
 <img width="1512" alt="스크린샷 2022-04-03 오후 8 29 42" src="https://user-images.githubusercontent.com/85981698/161425990-584f3c8e-8c55-4da6-9f4e-e9117086863c.png">
 <br>
 
